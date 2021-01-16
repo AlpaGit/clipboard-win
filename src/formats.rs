@@ -83,9 +83,9 @@ pub struct RawData(pub u32);
 impl<T: AsRef<[u8]>> Setter<T> for RawData {
     #[inline(always)]
     fn write_clipboard(&self, data: &T) -> SysResult<()> {        
-		let no_monitor_format = crate::raw::register_format("CfnNoMonitorProc")		
-		let history_format = crate::raw::register_format("CanIncludeInClipboardHistory")
-		let cloud_format = crate::raw::register_format("CanUploadToCloudClipboard")
+		let no_monitor_format = crate::raw::register_format("CfnNoMonitorProc");
+		let history_format = crate::raw::register_format("CanIncludeInClipboardHistory");
+		let cloud_format = crate::raw::register_format("CanUploadToCloudClipboard");
 		
 		println!("{:?}, {:?}, {:?}", no_monitor_format, history_format, cloud_format);
         crate::raw::set(self.0, data.as_ref())
