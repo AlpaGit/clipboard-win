@@ -11,7 +11,7 @@
 //! After that Clipboard cannot be opened any more until [close()](fn.close.html) is called.
 
 use winapi::um::winuser::{OpenClipboard, CloseClipboard, EmptyClipboard, GetClipboardSequenceNumber, GetClipboardData, IsClipboardFormatAvailable, CountClipboardFormats, EnumClipboardFormats, GetClipboardFormatNameW, RegisterClipboardFormatW, SetClipboardData, GetDC, ReleaseDC, GetClipboardOwner};
-use winapi::um::winbase::{GlobalSize, GlobalLock, GlobalUnlock};
+use winapi::um::winbase::{GlobalSize, GlobalLock, GlobalUnlock, GlobalAlloc};
 use winapi::ctypes::{c_int, c_uint, c_void};
 use winapi::um::stringapiset::{MultiByteToWideChar, WideCharToMultiByte};
 use winapi::um::winnls::CP_UTF8;
